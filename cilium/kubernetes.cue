@@ -15,3 +15,15 @@ kubernetes: serviceAccounts: {
 		}
 	}
 }
+
+kubernetes: services: {
+	for k, x in service {
+		"\(k)": v1.#Service & x.kubernetes & {
+			apiVersion: "v1"
+			kind:       "Service"
+			metadata:   x.metadata & {
+				name: x.name
+			}
+		}
+	}
+}

@@ -4,11 +4,9 @@ package cilium
 #Base: {
 	name: string
 
-	label: [string]: string
-
 	// Set of Kubernetes specific settings that will be merged at the
 	// top-level. The allowed fields are type specific.
-	kubernetes: {}
+	kubernetes: {...}
 
 	...
 }
