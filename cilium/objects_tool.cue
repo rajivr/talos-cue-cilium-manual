@@ -7,4 +7,5 @@ objectSets: [
 	kubernetes.services,
 	kubernetes.roles,
 	kubernetes.roleBindings,
+	kubernetes.clusterRoles,
 ]
