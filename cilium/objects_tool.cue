@@ -6,4 +6,5 @@ objectSets: [
 	kubernetes.serviceAccounts,
 	kubernetes.services,
 	kubernetes.roles,
+	kubernetes.roleBindings,
 ]

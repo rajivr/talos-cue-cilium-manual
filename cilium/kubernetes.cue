@@ -40,3 +40,15 @@ kubernetes: roles: {
 		}
 	}
 }
+
+kubernetes: roleBindings: {
+	for k, x in roleBinding {
+		"\(k)": rbac_v1.#RoleBinding & x.kubernetes & {
+			apiVersion: "rbac.authorization.k8s.io/v1"
+			kind:       "RoleBinding"
+			metadata:   x.metadata & {
+				name: x.name
+			}
+		}
+	}
+}
