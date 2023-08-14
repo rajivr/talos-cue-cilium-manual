@@ -64,3 +64,15 @@ kubernetes: clusterRoles: {
 		}
 	}
 }
+
+kubernetes: clusterRoleBindings: {
+	for k, x in clusterRoleBinding {
+		"\(k)": rbac_v1.#ClusterRoleBinding & x.kubernetes & {
+			apiVersion: "rbac.authorization.k8s.io/v1"
+			kind:       "ClusterRoleBinding"
+			metadata:   x.metadata & {
+				name: x.name
+			}
+		}
+	}
+}

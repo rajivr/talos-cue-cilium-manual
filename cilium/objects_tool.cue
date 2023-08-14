@@ -8,4 +8,5 @@ objectSets: [
 	kubernetes.roles,
 	kubernetes.roleBindings,
 	kubernetes.clusterRoles,
+	kubernetes.clusterRoleBindings,
 ]
