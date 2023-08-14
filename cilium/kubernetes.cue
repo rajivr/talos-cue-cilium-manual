@@ -76,3 +76,15 @@ kubernetes: clusterRoleBindings: {
 		}
 	}
 }
+
+kubernetes: configMaps: {
+	for k, x in configMap {
+		"\(k)": core_v1.#ConfigMap & x.kubernetes & {
+			apiVersion: "v1"
+			kind:       "ConfigMap"
+			metadata:   x.metadata & {
+				name: x.name
+			}
+		}
+	}
+}
