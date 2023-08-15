@@ -10,4 +10,5 @@ objectSets: [
 	kubernetes.clusterRoles,
 	kubernetes.clusterRoleBindings,
 	kubernetes.configMaps,
+	kubernetes.daemonSets,
 ]

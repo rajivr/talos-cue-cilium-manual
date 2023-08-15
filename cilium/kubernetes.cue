@@ -3,6 +3,7 @@ package cilium
 import (
 	core_v1 "k8s.io/api/core/v1"
 	rbac_v1 "k8s.io/api/rbac/v1"
+	apps_v1 "k8s.io/api/apps/v1"
 )
 
 kubernetes: serviceAccounts: {
@@ -82,6 +83,18 @@ kubernetes: configMaps: {
 		"\(k)": core_v1.#ConfigMap & x.kubernetes & {
 			apiVersion: "v1"
 			kind:       "ConfigMap"
+			metadata:   x.metadata & {
+				name: x.name
+			}
+		}
+	}
+}
+
+kubernetes: daemonSets: {
+	for k, x in daemonSet {
+		"\(k)": apps_v1.#DaemonSet & x.kubernetes & {
+			apiVersion: "apps/v1"
+			kind:       "DaemonSet"
 			metadata:   x.metadata & {
 				name: x.name
 			}
