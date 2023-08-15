@@ -101,3 +101,15 @@ kubernetes: daemonSets: {
 		}
 	}
 }
+
+kubernetes: deployments: {
+	for k, x in deployment {
+		"\(k)": apps_v1.#Deployment & x.kubernetes & {
+			apiVersion: "apps/v1"
+			kind:       "Deployment"
+			metadata:   x.metadata & {
+				name: x.name
+			}
+		}
+	}
+}
