@@ -2,12 +2,10 @@ package cilium
 
 // Source: cilium/templates/cilium-agent/daemonset.yaml
 daemonSet: cilium: {
-	metadata: {
-		labels: {
-			"k8s-app":                   "cilium"
-			"app.kubernetes.io/part-of": "cilium"
-			"app.kubernetes.io/name":    "cilium-agent"
-		}
+	metadata: labels: {
+		"k8s-app":                   "cilium"
+		"app.kubernetes.io/part-of": "cilium"
+		"app.kubernetes.io/name":    "cilium-agent"
 	}
 	kubernetes: spec: {
 		selector: matchLabels: "k8s-app": "cilium"

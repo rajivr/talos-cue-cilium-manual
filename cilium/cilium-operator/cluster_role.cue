@@ -2,9 +2,7 @@ package cilium
 
 // Source: cilium/templates/cilium-operator/clusterrole.yaml
 clusterRole: "cilium-operator": {
-	metadata: {
-		labels: "app.kubernetes.io/part-of": "cilium"
-	}
+	metadata: labels: "app.kubernetes.io/part-of": "cilium"
 	kubernetes: rules: [{
 		apiGroups: [
 			"",

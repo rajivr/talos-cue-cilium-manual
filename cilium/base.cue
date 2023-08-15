@@ -7,6 +7,5 @@ package cilium
 	// Set of Kubernetes specific settings that will be merged at the
 	// top-level. The allowed fields are type specific.
 	kubernetes: {...}
-
 	...
 }

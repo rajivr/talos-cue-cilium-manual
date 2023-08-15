@@ -2,9 +2,7 @@ package cilium
 
 // Source: cilium/templates/cilium-agent/clusterrole.yaml
 clusterRole: cilium: {
-	metadata: {
-		labels: "app.kubernetes.io/part-of": "cilium"
-	}
+	metadata: labels: "app.kubernetes.io/part-of": "cilium"
 	kubernetes: rules: [{
 		apiGroups: [
 			"networking.k8s.io",

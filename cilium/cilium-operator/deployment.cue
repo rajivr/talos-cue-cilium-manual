@@ -2,13 +2,11 @@ package cilium
 
 // Source: cilium/templates/cilium-operator/deployment.yaml
 deployment: "cilium-operator": {
-	metadata: {
-		labels: {
-			"io.cilium/app":             "operator"
-			name:                        "cilium-operator"
-			"app.kubernetes.io/part-of": "cilium"
-			"app.kubernetes.io/name":    "cilium-operator"
-		}
+	metadata: labels: {
+		"io.cilium/app":             "operator"
+		name:                        "cilium-operator"
+		"app.kubernetes.io/part-of": "cilium"
+		"app.kubernetes.io/name":    "cilium-operator"
 	}
 	kubernetes: spec: {
 		// See docs on ServerCapabilities.LeasesResourceLock in file pkg/k8s/version/version.go

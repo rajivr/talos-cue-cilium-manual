@@ -2,9 +2,7 @@ package cilium
 
 // Source: cilium/templates/cilium-agent/clusterrolebinding.yaml
 clusterRoleBinding: cilium: {
-	metadata: {
-		labels: "app.kubernetes.io/part-of": "cilium"
-	}
+	metadata: labels: "app.kubernetes.io/part-of": "cilium"
 	kubernetes: {
 		roleRef: {
 			apiGroup: "rbac.authorization.k8s.io"
